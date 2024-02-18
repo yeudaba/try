@@ -1,1 +1,1 @@
-print("hggjgcghjk")
+print("please enter number:")
