@@ -1,5 +1,7 @@
 import numpy as np
 from colors import bcolors
+
+
 def gaussianElimination(mat):
     N = len(mat)
 
@@ -53,12 +55,14 @@ def forward_substitution(mat):
 
     return -1
 
+
 def identity_matrix_with_solution(A_b, x):
-    A_b = np.zeros((3,4))
+    A_b = np.zeros((len(A_b), len(A_b) + 1))
     np.fill_diagonal(A_b, 1)
     for i in range(len(A_b)):
-        A_b[i][-1]=x[i]
+        A_b[i][-1] = x[i]
     return A_b
+
 
 # function to calculate the values of the unknowns
 def calculating_results(A_b):
@@ -95,10 +99,10 @@ if __name__ == '__main__':
             print("\nSolution for the system: ")
             for i, value in enumerate(result):
                 print(f"Solution for unknown {i + 1}: {value[-1]:.6f}")
+        print("---------------------------------------------------------------------------")
+        print("The solution matrix is: ")
         for i in range(len(A_b)):
             print(result[i])
 
     except ValueError as e:
         print(f"Error: {e}")
-
-

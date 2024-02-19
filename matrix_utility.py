@@ -1,23 +1,5 @@
 import numpy as np
 
-def print_matrix(matrix):
-    for row in matrix:
-        for element in row:
-            print(element, end=" ")  # Print each element in the row
-        print()  # Move to the next row
-    print()
-
-
-
-#  swapping between row i to row j in the matrix
-def swap_row(mat, i, j):
-    N = len(mat)
-    for k in range(N + 1):
-        temp = mat[i][k]
-        mat[i][k] = mat[j][k]
-        mat[j][k] = temp
-
-
 def is_diagonally_dominant(mat):
     if mat is None:
         return False
@@ -91,7 +73,6 @@ def matrix_multiply(A, B):
 
     return np.array(result)
 
-
 def row_addition_elementary_matrix(n, target_row, source_row, scalar=1.0):
 
     if target_row < 0 or source_row < 0 or target_row >= n or source_row >= n:
@@ -119,7 +100,6 @@ def scalar_multiplication_elementary_matrix(n, row_index, scalar):
 
     return np.array(elementary_matrix)
 
-
 # Partial Pivoting: Find the pivot row with the largest absolute value in the current column
 def partial_pivoting(A,i,N):
     pivot_row = i
@@ -142,3 +122,10 @@ def partial_pivoting(A,i,N):
         A = np.dot(e_matrix, A)
         print(f"The matrix after elementary operation :\n {A}")
         print("------------------------------------------------------------------")
+
+def print_matrix(matrix):
+    for row in matrix:
+        for element in row:
+            print(element, end=" ")  # Print each element in the row
+        print()  # Move to the next row
+    print()
