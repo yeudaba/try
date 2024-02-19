@@ -120,3 +120,7 @@ if __name__ == '__main__':
         i += 1
     print("+++++")
     print(np.dot(B[0], B[7]))
+
+
+def swap_rows_elementary_matrix():
+    return None
